@@ -1,0 +1,23 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block bloquePrincipal %}
+{% include 'componentes/header.html' %}
+    <div class="container">
+        <div class="row">
+            {% for celda in celdas %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{celda.nombre}}</h5>
+                    {% if not celda.estado %}
+                        <img src="{% static 'images/carro1.png'%}" class="img-fluid w-100">
+                    {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock bloquePrincipal %}
