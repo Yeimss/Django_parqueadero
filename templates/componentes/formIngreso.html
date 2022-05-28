@@ -1,0 +1,13 @@
+<div class="col-12 col-md-5 rounded border border-dark p-3 m-2">
+    <h4>Ingreso</h4>
+    <form method="POST" class="flex-column d-flex text-center">
+        {% csrf_token %}
+        {% for f in form %}
+        {{f.label}}
+        <div class="w-100">
+                {{f}}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-outline-dark mt-4">Ingresar Vehiculo</button>
+    </form>
+</div>

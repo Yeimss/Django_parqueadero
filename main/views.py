@@ -11,7 +11,10 @@ def index(request):
 
 def ingreso(request):
     form=FormIngreso(request.POST)
+    form2=FormSalida(request.POST)
     return render(request, 'pages/ingreso.html', {
         'title':'Ingreso/Salida',
         'form':form,
+        'form2':form2,
+
     }) 

@@ -14,6 +14,8 @@
                     <h5 class="card-title text-center">{{celda.nombre}}</h5>
                     {% if not celda.estado %}
                         <img src="{% static 'images/carro1.png'%}" class="img-fluid w-100">
+                        {% else %}
+                        <img src="{% static 'images/celda.png'%}" class="img-fluid w-100">
                     {% endif %}
                 </div>
               </div>
