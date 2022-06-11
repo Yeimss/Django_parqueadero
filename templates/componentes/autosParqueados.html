@@ -1,0 +1,30 @@
+<div class="col-12">
+    <ul class="list-group">
+        {% if vehiculos %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Celda</th>
+                      <th scope="col">Placa</th>
+                      <th scope="col">Hora de entrada</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Salir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vehiculo in vehiculos %}
+                        <tr>
+                            <th scope="row">{{vehiculo.celda}}</th>
+                            <td>{{vehiculo.placa}}</td>
+                            <td>{{vehiculo.fecha_ingreso}}</td>
+                            <td>{% if vehiculo.celda.estado %}Disponible {% else %} No Disponible{% endif %}</td>
+                            <td><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </ul>
+<div>
+
+    

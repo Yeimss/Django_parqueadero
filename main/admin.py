@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(Tarifas)
 admin.site.register(Celdas)
 admin.site.register(Vehiculos)
+
+
