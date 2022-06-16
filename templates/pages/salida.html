@@ -7,7 +7,17 @@
 
 <main>
     <div class="container">
-    
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-dark text-center" role="alert">
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
     <div class="row d-flex justify-content-center">
         {% include 'componentes/autosParqueados.html' %}
     </div>

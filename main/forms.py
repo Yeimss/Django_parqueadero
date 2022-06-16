@@ -8,7 +8,15 @@ from django.forms import ModelForm
 
 
 class FormIngreso(ModelForm):
+
     class Meta:
+        celdas=Celdas.objects.filter(estado=1)
+        c=[]
+        for celda in celdas:
+            tupla=(celda.pk, celda.nombre)
+            c.append(tupla)
+
+        #-----------------------
         model=Vehiculos
         exclude=('valor_total', 'fecha_salida','fecha_ingreso')
         widgets = {
@@ -22,10 +30,12 @@ class FormIngreso(ModelForm):
                 'type':'datetime-local'
             }),
             'celda':forms.Select(
-            choices=[(1,"adfads")],
             attrs={
                 'class':'form-select',
             }),
+        }
+        choices={
+            'celda':c
         }
 
         input_formats={'fecha_ingreso':["%Y-%m-%d %H:%M:%S"]}

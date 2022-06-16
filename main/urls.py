@@ -5,6 +5,6 @@ urlpatterns = [
     path('',views.index, name="index"),
     path('ingreso/',views.Ingreso.as_view(), name="ingreso"),
     path('salida/',views.Salida.as_view(), name="salida"),
-
+    path('salir/<int:id>/',views.salir, name="salir"),
 
 ]
